@@ -90,7 +90,7 @@ def generate_and_send_payslip(row, sender_email, sender_password, selected_month
     msg['To'] = row['Email']
     msg['Subject'] = f"{selected_month} Payslip - ENA COACH LTD"
 
-    body = f"Dear {row['Name']},\n\nPlease find attached your payslip for {selected_month}.\n\nRegards,\nENA COACH LTD"
+    body = f"Dear {row['Name']},\n\nPlease find attached your payslip for {selected_month}.\nThe Password to the Document is your ID Number\n\nRegards,\nENA COACH LTD"
     msg.attach(MIMEText(body, 'plain'))
 
     attachment = MIMEApplication(encrypted_pdf.read(), _subtype="pdf")
